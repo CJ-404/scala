@@ -7,9 +7,9 @@ object Main extends App {
     var g:Double = 1.0f;    //g is not declared in the tutorial file...
     
     //a)
-    println( (b-1)*a + c *d);b-=1;d-=1;
+    println( (b-1)*a + c *d);b-=1;d-=1;         //-- operator in not valid in scala
     //b)
-    println((a+1));a+=1;
+    println((a+1));a+=1;            // ++ operator is not vaid in scala
     //c)
     println(-2*(g-k)+c);
     //d)
