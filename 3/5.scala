@@ -1,15 +1,7 @@
 object Main extends App{
-    def program(a:Int,b:Int)={
-        if(a==1)
-        if(b==1)
-        println("***");
-        else
-        println("###");
-        println("===");
-    }
+    def easy_pace(n:Double):Double = 8*n;
+    def Tempo(n:Double):Double = 7*n;
+    def Total(e1:Double,t1:Double,e2:Double):Double = easy_pace(e1) + Tempo(t1) + easy_pace(e2);
 
-    program(1,2);
-    program(1,3);
-    program(2,3);
-    program(2,2);
+    println("Total running time = " + Total(2,3,2)+" min");
 }
