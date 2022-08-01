@@ -4,18 +4,26 @@ object Main extends App{
 
     def toLower(str:String):String = str.toLowerCase();
 
-    def first_2_Upper(str:String):String = (str.substring(0,2)).toUpperCase() + str.substring(2,str.length);
-
-    def last_Upper(str:String):String = str.substring(0,str.length-1) + (str(str.length-1)).toUpper;
-
-    def formatNames(name:String,func:(String)=>String):String = {
-        func(name);
+    def formatNames(name : String )(index_List : Int*)(func : String => String) : String = {
+        if(index_List.isEmpty){
+            func(name);     //return
+        }
+        else{
+            var temp = "";
+            var index = 0;
+            while(index < name.length){
+                if(index_List.contains(index)) temp = temp + func(name(index).toString)
+                else temp = temp + name(index).toString
+                index = index + 1;
+            }
+            temp;   //return
+        }
     }
 
-    println(formatNames("Benny",toUpper));
-    println(formatNames("Niroshan",first_2_Upper));
-    println(formatNames("Saman",toLower));
-    println(formatNames("Kumara",last_Upper));
+    println(formatNames("Benny")()(toUpper));
+    println(formatNames("Niroshan")(0,1)(toUpper));
+    println(formatNames("Saman")()(toLower));
+    println(formatNames("Kumara")(5)(toUpper));
 
     
 }
