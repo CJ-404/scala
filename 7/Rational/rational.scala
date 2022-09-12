@@ -19,9 +19,7 @@ class rational(x:Int , y:Int){
     var numer = x/gcd;
     var denom = y/gcd;
 
-    def neg = {
-        this.numer = -this.numer;
-    };
+    def neg = new rational(-this.numer , this.denom);
 
     override def toString = "[ "+ numer + " / " + denom + " ]";
 
