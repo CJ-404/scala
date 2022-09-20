@@ -17,7 +17,7 @@ case class Point(a:Double , b:Double ){
     }
 
     def invert() = {
-        Point( -this.x , -this.y );
+        Point( this.y , this.x );
     }
 }
 
